@@ -576,14 +576,14 @@
                   <data type="Version">1.0.0</data>
                </feature>
             </dependency>
-            <dependency resourceType="SWComponent" resourceId="platform.middleware.ammclib" description="ammclib is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
+            <dependency resourceType="SWComponent" resourceId="platform.middleware.S32K3xx_AMMCLIB" description="S32K3xx_AMMCLIB is not found in the toolchain/IDE project. The project will not compile!" problem_level="2" source="Peripherals">
                <feature name="enabled" evaluation="equal">
                   <data type="Boolean">true</data>
                </feature>
             </dependency>
-            <dependency resourceType="SWComponent" resourceId="platform.middleware.ammclib" description="An unsupported version of the ammclib in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
+            <dependency resourceType="SWComponent" resourceId="platform.middleware.S32K3xx_AMMCLIB" description="An unsupported version of the S32K3xx_AMMCLIB in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. The project might not compile correctly." problem_level="1" source="Peripherals">
                <feature name="version" evaluation="equivalent">
-                  <data type="Version">1.1.43</data>
+                  <data type="Version">1.1.44</data>
                </feature>
             </dependency>
             <dependency resourceType="Tool" resourceId="Clocks" description="The Clocks tool is required by the Peripherals tool, but it is disabled." problem_level="2" source="Peripherals">
@@ -3953,7 +3953,7 @@
                         </struct>
                      </config_set>
                   </instance>
-                  <instance name="ammclib_1" uuid="26e1d8fd-205e-4fdc-8889-cab10999f5d4" type="platform.middleware.ammclib" type_id="ammclib" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
+                  <instance name="S32K3xx_AMMCLIB_1" uuid="6a2a270e-da35-497a-9616-5bb16cde652d" type="platform.middleware.S32K3xx_AMMCLIB" type_id="S32K3xx_AMMCLIB" mode="general" enabled="true" comment="" custom_name_enabled="false" editing_lock="false">
                      <config_set name="ammclib_cfg_set" quick_selection="ammclib_default">
                         <setting name="ammclib_fixedPoint" value="true"/>
                         <setting name="ammclib_float" value="true"/>

@@ -3,7 +3,7 @@
 
 ## AN14482 3-Phase PMSM Field-Oriented Control Solution using FRDM-A-S32M276
 
-This example demonstrates a sensorless Field Oriented Control (FOC) implementation for Permanent Magnet Synchronous Motor (PMSM) control using single shunt current sensing on the NXP S32M276 microcontroller.
+This example demonstrates a sensorless Field Oriented Control (FOC) implementation for Permanent Magnet Synchronous Motor (PMSM) using single shunt current sensing on the NXP S32M276 microcontroller.
 
 The demo is based on the [AN14482 3-phase Sensorless PMSM Motor Control with S32M276](https://www.nxp.com/webapp/Download?colCode=AN14482), more details about the implementation can be found in the application note.
 The complete setup with FRDM-A-S32M276 EVB, Sunrise motor is pictured below:
@@ -26,7 +26,7 @@ The complete setup with FRDM-A-S32M276 EVB, Sunrise motor is pictured below:
 ## 1. Software and Tools<a name="step1"></a>
 This example was developed using the FRDM Automotive Bundle for S32K3. To download and install the complete software and tools ecosystem, use the following link:
 - [S32K3 FRDM Automotive Board Installation Package](https://www.nxp.com/app-autopackagemgr/automotive-software-package-manager:AUTO-SW-PACKAGE-MANAGER?currentTab=0&selectedDevices=S32K3&applicationVersionID=156)
-- [Automotive Math and Motor Control Library (AMMCLib) Rev 1.1.43](#AMMCLib)
+- [Automotive Math and Motor Control Library (AMMCLib) Rev 1.1.44](#AMMCLib)
 - [FreeMASTER Run-Time Debugging Tool](https://www.nxp.com/design/design-center/software/development-software/freemaster-run-time-debugging-tool:FREEMASTER)
 
 ## 2. Hardware<a name="step2"></a>
@@ -94,7 +94,7 @@ IMPORTANT - Read before starting the motor:
 ## 4. Results<a name="step4"></a>
 1. Open FreeMASTER Run-Time Debugging Tool and establish a connection to the target board via micro-USB cable.
 2. Open FreeMASTER_control/S32M_PMSM_Sensorless.pmpx project file in FreeMASTER.
-3. Click on **"GO"** button to establish communication with the target board: [<br><img src="images/FreeMASTER_Connect.png " width="600"/></p>](./images/FreeMASTER_Connect.png)
+3. Click on **"GO"** button to establish communication with the target board: [<br><img src="images/FreeMASTER_Connect.png" width="600"/></p>](./images/FreeMASTER_Connect.png)
 4. Go to App Control Tab and Press **"ON"** button to start the motor, set the Speed_Required value to desired motor speed (1000RPM):[<br><img src="images/FreeMASTER_Running.png" width="600"/></p>](./images/FreeMASTER_Running.png)
 5. Observe the motor iABC current waveforms in real-time on the FreeMASTER: [<br><img src="images/FreeMASTER_Waveforms.png" width="600"/></p>](./images/FreeMASTER_Waveforms.png)
 
@@ -108,6 +108,7 @@ Does FreeMASTER connect?
     │   ├─ Overcurrent → Reduce current limit, check motor wiring
     │   ├─ Overvoltage/Undervoltage → Check 12V supply is within range
     │   ├─ Ia, Ib or Ic → See Motor Phases connection are correct
+    │   ├─ AEModule → check gate driver supply voltage and Status0 value
     │   └─ FOC → Verify motor shaft is free to rotate
     └─ NO → Check "ON" button pressed, Speed_Required > 0
 ```
@@ -116,7 +117,7 @@ Does FreeMASTER connect?
   - Right-click on the project and select **Quick Fix** to install the required compiler: [<br><img src="images/S32DS_Qfix.png" width="600"/></p>](./images/S32DS_Qfix.png)
   - Alternatively, navigate to **S32DS Extensions and Updates > NXP GCC 10.2 > Install** and add the NXP GCC 10.2 compiler: [<br><img src="images/S32DS_GCC.png" width="600"/></p>](./images/S32DS_GCC.png)
 - After loading the project, there is a message "Path to collateral manifest does not exist ${S32K3xx_AMMCLIB}"
-  - Install AMMCLib<a name="AMMCLIB"></a> from **S32DS Extensions and Updates > AMMCLIB for S32K3xx/S32M27x > Install** [<br><img src="images/S32DS_AMMCLIB.png" width="600"/></p>](./images/S32DS_AMMCLIB.png)
+  - Install AMMCLIB<a name="AMMCLib"></a> from **S32DS Extensions and Updates > AMMCLIB for S32K3xx/S32M27x > Install** [<br><img src="images/S32DS_AMMCLIB.png" width="600"/></p>](./images/S32DS_AMMCLIB.png)
 
 ## 6. Support<a name="step6"></a>
 * [AN14482 3-phase Sensorless PMSM Motor Control with S32M276](https://www.nxp.com/webapp/Download?colCode=AN14482)
@@ -153,3 +154,4 @@ Questions regarding the content/correctness of this example can be entered as Is
 | Version | Description / Update                           | Date                        |
 |:-------:|------------------------------------------------|----------------------------:|
 | 1.0     | Initial release on Application Code Hub        | February 27<sup>th</sup> 2026 |
+| 1.1     | Updated to support AMMCLIB v1.1.44             | May 11<sup>th</sup> 2026 |
